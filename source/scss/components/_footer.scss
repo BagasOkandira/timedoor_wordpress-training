@@ -1,0 +1,135 @@
+@use "../_config.scss" as *;
+
+.footer {
+  padding-top: 10px;
+
+  &__wrapper {
+    position: relative;
+    background-image: url("../images/footer_backdrop.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+  }
+  &__logo-wrapper {
+    display: inline-block;
+    max-width: 322px;
+    padding: 86px 1rem 50px 1rem;
+    width: 100%;
+    height: auto;
+  }
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__socmed-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60vw;
+      height: 1px;
+      background-color: $color-white;
+    }
+  }
+  &__socmed-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: auto;
+    aspect-ratio: cos(30deg);
+    clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+    transition: transform 0.3s ease;
+    z-index: 200;
+    background-color: $color-primary;
+    svg {
+      width: 2vw;
+      height: auto;
+      path {
+        transition: 0.5s ease;
+      }
+    }
+
+    &:hover {
+      svg path {
+        fill: $color-gray-400;
+      }
+    }
+    @media (max-width: 1024px) {
+      width: 60px;
+      height: auto;
+      svg {
+        width: 30px;
+        height: auto;
+      }
+    }
+    @media (max-width: 767px) {
+      width: 40px;
+      height: auto;
+      svg {
+        width: 20px;
+        height: auto;
+      }
+    }
+  }
+  &__copyright {
+    font-family: $font-secondary;
+    font-size: $font-l20;
+    font-weight: $font-weight-bold;
+    line-height: $line-l20;
+    color: $color-white;
+    letter-spacing: 0;
+    padding: 90px 0;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  &__totop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $color-secondary;
+    fill: $color-gray-300;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 999;
+    svg {
+      fill: $color-gray-300;
+    }
+    &:hover {
+      background-color: $color-primary;
+      svg path {
+        stroke: $color-white;
+        fill: $color-white;
+      }
+    }
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    @media (max-width: 767px) {
+      width: 30px;
+      height: 30px;
+      bottom: 64px;
+      right: 32px;
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

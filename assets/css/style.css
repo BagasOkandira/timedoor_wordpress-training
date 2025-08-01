@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.button__icon {
+  margin-right: 0.5rem;
+}
+.button--primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+.button--primary:hover {
+  background-color: #ee3b24;
+}
+.button--primary.button--disabled, .button--primary[disabled] {
+  background-color: #000000;
+  color: #ffffff;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.button--outlined {
+  background-color: transparent;
+  color: #ee3b24;
+  border: 1px solid #ee3b24;
+}
+.button--outlined:hover {
+  background-color: #ee3b24;
+  color: #ffffff;
+}
+.button--outlined.button--disabled, .button--outlined[disabled] {
+  color: #ee3b24;
+  border-color: #ee3b24;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.button--secondary {
+  background-color: #ee3b24;
+  color: #ffffff;
+}
+.button--secondary:hover {
+  background-color: transparent;
+  color: #ee3b24;
+  border: 1px solid #ee3b24;
+}
+.button--secondary.button--disabled, .button--secondary[disabled] {
+  background-color: #f08075;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=style.css.map */

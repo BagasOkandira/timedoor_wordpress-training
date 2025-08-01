@@ -1,0 +1,435 @@
+@use "../_config.scss" as *;
+
+.container {
+  max-width: 88% !important;
+  overflow-x: hidden;
+  @media (max-width: 767px) {
+    max-width: 100% !important;
+  }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// banner section
+.banner {
+  position: relative;
+  background-color: $color-secondary;
+  color: $color-white;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/tiles.png");
+    background-repeat: repeat;
+    opacity: 0.7;
+    z-index: 0;
+    pointer-events: none;
+  }
+  &__slide {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    z-index: 2;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 100px !important;
+    height: 100vh;
+    z-index: 2;
+    @media (max-width: 767px) {
+      padding: 0 40px !important;
+    }
+  }
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-display;
+    line-height: $line-display;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 2.5rem;
+    @media (max-width: 1024px) {
+      line-height: normal;
+    }
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
+  }
+
+  &__description {
+    font-family: $font-primary;
+    font-size: $font-h1;
+    line-height: $line-h1;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 7%;
+    @media (max-width: 1024px) {
+      line-height: normal;
+    }
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+  &__button {
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  .swiper-pagination {
+    text-align: center;
+    &-bullet {
+      width: 40px;
+      height: 14px;
+      border: 1px solid $color-white;
+      border-radius: 0 !important;
+      background-color: white 50%;
+      transition: 0.5s;
+      &:hover,
+      &-active {
+        background-color: $color-primary-60;
+      }
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: transparent;
+    border: 2px solid $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: 0.5s;
+    &:hover {
+      background-color: $color-primary;
+      border: 2px solid $color-primary;
+    }
+    &::after {
+      display: none;
+    }
+    svg {
+      width: 36px;
+      height: 30px;
+    }
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// about section
+.about {
+  padding: 120px 0;
+
+  &__wrapper {
+    align-items: center;
+    padding: 0 1rem;
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-h2;
+    line-height: $line-h2;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+
+    @media (max-width: 990px) {
+      margin-top: 16px;
+    }
+    @media (max-width: 767px) {
+      font-size: 24px;
+      margin-top: 16px;
+    }
+  }
+
+  &__description {
+    margin: 20px 0;
+    p {
+      font-family: $font-secondary;
+      font-size: $font-p20;
+      line-height: $line-p20;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-default;
+      margin-bottom: 1.5rem;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      font-family: $font-secondary;
+      font-size: $font-p18;
+      line-height: $line-p18;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-default;
+      margin-bottom: 0.5rem;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// project section
+.project {
+  background-color: $color-gray-100;
+  padding-top: 6%;
+  padding-bottom: 5%;
+  &__text {
+    padding-bottom: 2%;
+  }
+  &__header {
+    position: relative;
+    font-family: $font-primary;
+    font-size: $font-h1;
+    line-height: $line-h1;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 4px;
+      background-color: $color-gray-200;
+    }
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+  &__description {
+    font-family: $font-secondary;
+    font-size: $font-p20;
+    line-height: $line-p20;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-default;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    height: 100%;
+
+    &:hover {
+      .project__overlay {
+        opacity: 1;
+      }
+    }
+    @media (max-width: 1024px) {
+      .project__overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    color: $color-white;
+    text-align: center;
+    opacity: 0;
+    transition: 0.7s ease;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 34px;
+      left: 34px;
+      right: 34px;
+      bottom: 34px;
+      border: solid 1px $color-white;
+      overflow: hidden;
+    }
+    @media screen {
+    }
+  }
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-h3;
+    line-height: $line-h3;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media (max-width: 990px) {
+      font-size: 32px;
+    }
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    min-width: 2vw;
+    height: auto;
+    aspect-ratio: cos(30deg);
+    clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+    transition: 0.5s;
+    z-index: 200;
+    background-color: $color-primary;
+    svg {
+      width: 2vw;
+      height: auto;
+      path {
+        transition: 0.5s ease;
+      }
+    }
+    &:hover {
+      svg path {
+        stroke: $color-gray-400;
+      }
+    }
+    @media (max-width: 990px) {
+      width: 8vw;
+      height: auto;
+      svg {
+        width: 4vw;
+        height: auto;
+      }
+    }
+  }
+}
+
+.modal {
+  z-index: 1055 !important;
+  &__dialog {
+    max-width: 720px !important;
+    position: relative;
+    z-index: 1055 !important;
+  }
+  &__content {
+    background-color: $color-white;
+    padding: 1rem;
+    position: relative;
+    z-index: 1056 !important;
+  }
+  &__body {
+    text-align: right;
+    padding: 0 !important;
+  }
+  // &__image-wrapper {
+  //   width: 100%;
+  //   display: block;
+  //   height: auto;
+  //   border-radius: 6px;
+  // }
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  &__close {
+    background: $color-gray-100;
+    margin-top: 20px;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 1060 !important;
+  }
+}
+
+// article section
+.article {
+  padding-top: 6%;
+  &__text {
+    padding-bottom: 2%;
+  }
+  &__header {
+    position: relative;
+    font-family: $font-primary;
+    font-size: $font-h1;
+    line-height: $line-h1;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 4px;
+      background-color: $color-gray-200;
+    }
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+  &__subtitle {
+    font-family: $font-secondary;
+    font-size: $font-p20;
+    line-height: $line-p20;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-default;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use "../_config.scss" as *;
+
+.button {
+  font-family: $font-secondary;
+  font-size: $font-l20;
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing-default;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  border: solid 3px $color-white;
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 1;
+  text-decoration: none;
+
+  &__icon {
+    margin-right: 0.5rem;
+  }
+
+  &__text {
+    line-height: 1;
+  }
+
+  &__icon-svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  &--primary {
+    color: $color-white;
+    border: solid 3px $color-white;
+    position: relative;
+
+    &:hover {
+      border: 3px solid $color-primary;
+      background-color: $color-primary;
+    }
+    &.button--disabled,
+    &[disabled] {
+      background-color: $color-black;
+      color: $color-white;
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+  &__icon-svg {
+    position: relative;
+    transition: stroke 0.3s ease, fill 0.3s ease;
+    z-index: 1;
+  }
+  &__text {
+    position: relative;
+    transition: stroke 0.3s ease, fill 0.3s ease;
+    z-index: 1;
+  }
+
+  &--outlined {
+    background-color: transparent;
+    color: $color-gray-400;
+    border: 3px solid $color-primary;
+    transition: 0.5s;
+
+    &:hover {
+      border: 3px solid $color-primary;
+      background-color: $color-primary;
+      color: $color-white;
+      opacity: 1;
+    }
+
+    &.button--disabled,
+    &[disabled] {
+      color: $color-primary;
+      border-color: $color-primary;
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-primary;
+    color: $color-white;
+    border: 3px solid $color-primary;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-secondary;
+      border: 3px solid $color-primary;
+    }
+
+    &.button--disabled,
+    &[disabled] {
+      background-color: $color-disabled;
+      color: $color-white;
+      cursor: not-allowed;
+    }
+  }
+}

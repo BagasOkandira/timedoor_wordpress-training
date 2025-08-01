@@ -1,0 +1,53 @@
+@use "../_config.scss" as *;
+
+.nav {
+  padding: 0 !important;
+  &__container {
+    background-color: $color-white;
+    max-width: 88% !important;
+    height: 120px;
+    border-radius: 0 0 8px 8px;
+    padding: 0 !important;
+    box-shadow: 0px 8px 16px -2px rgba(0, 0, 0, 0.2);
+    @media (max-width: 990px) {
+      padding: 1rem !important;
+    }
+  }
+  &__logo {
+    display: block;
+    padding-left: 35px;
+    @media (max-width: 767px) {
+      padding: 0;
+      img {
+        width: 150px;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+  &__list {
+    padding-right: 50px;
+  }
+  .menu-item {
+    font-family: $font-secondary;
+    font-size: $font-p20;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    transition: 0.5s;
+    &:hover,
+    &.current_page_item {
+      a {
+        color: $color-primary !important;
+      }
+    }
+  }
+  a {
+    padding: 1rem 2rem !important;
+    transition: 0.5s;
+    text-decoration: none;
+    color: $color-black;
+    &:hover {
+      color: $color-primary !important;
+    }
+  }
+}

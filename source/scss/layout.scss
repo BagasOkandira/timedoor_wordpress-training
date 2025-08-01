@@ -1,0 +1,21 @@
+@use "_config.scss";
+@use "components/buttons";
+@use "components/footer";
+@use "components/header";
+@use "components/hero";
+@use "components/article-card";
+
+// Pages
+@use "pages/home";
+@use "pages/portfolio";
+@use "pages/blog";
+@use "pages/contact.scss";
+
+@font-face {
+  font-family: "Jaapokki";
+  src: url("../fonts/jaapokki/Jaapokki-Regular.woff2") format("woff2"),
+    url("../fonts/jaapokki/Jaapokki-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");

@@ -1,0 +1,123 @@
+@use "../_config.scss" as *;
+
+.container {
+  padding: 0 !important;
+  @media (max-width: 990px) {
+    padding: 0 1rem !important;
+  }
+}
+
+.contact {
+  margin-top: 10vw;
+  &__map {
+    width: 100%;
+    height: 20vw;
+    @media (max-width: 767px) {
+      height: auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  }
+  &__form {
+    margin: 6vw 0 6vw 0;
+    .form-label {
+      font-family: $font-secondary;
+      font-size: $font-l20;
+      line-height: $line-l20;
+      font-weight: $font-weight-regular;
+      letter-spacing: $letter-spacing-default;
+      color: $color-gray-300;
+      cursor: pointer;
+    }
+    .form-control {
+      border: 1px solid $color-gray-200;
+      border-radius: 0;
+      padding: 24px 30px;
+      font-family: $font-secondary;
+      font-size: $font-p20;
+      line-height: $line-l20;
+      letter-spacing: $letter-spacing-default;
+      color: $color-gray-400;
+
+      &:focus {
+        border-color: $color-secondary;
+        box-shadow: none;
+      }
+    }
+  }
+  &__wrapper {
+    margin: 6vw 0 6vw 0;
+  }
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-h3;
+    line-height: $line-h3;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+  &__description {
+    margin: 20px 0;
+    p {
+      margin-bottom: 2vw;
+      color: $color-gray-300;
+      font-family: $font-secondary;
+      font-size: $font-p20;
+      line-height: $line-p20;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-default;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__description {
+    font-family: $font-secondary;
+    font-size: $font-p20;
+    line-height: $line-p20;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-default;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  &__list {
+    padding: 0 !important;
+    list-style: none;
+    color: $color-gray-300;
+    font-family: $font-secondary;
+    font-size: $font-p20;
+    line-height: $line-p20;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-default;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  &__list-item {
+    margin-bottom: 1rem;
+  }
+  &__list-link {
+    color: $color-gray-300;
+    text-decoration: none;
+    transition: 0.5s;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &__button {
+    margin-bottom: 9vw;
+    @media (max-width: 767px) {
+      font-size: 1rem;
+    }
+  }
+}

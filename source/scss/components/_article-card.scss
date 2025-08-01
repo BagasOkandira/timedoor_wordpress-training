@@ -1,0 +1,166 @@
+@use "../_config.scss" as *;
+
+// Individual category colors
+.category--objects {
+  background-color: #f39c12; // orange
+}
+.category--technology {
+  background-color: #3498db; // blue
+}
+.category--photography {
+  background-color: #9b59b6; // purple
+}
+.category--fashion {
+  background-color: #e91e63; // pink
+}
+.category--realthough {
+  background-color: #2ecc71; // green
+}
+.category--architecture {
+  background-color: #34495e; // dark gray-blue
+}
+
+.article-card {
+  &__item {
+    overflow: hidden;
+    margin-bottom: 150px;
+    &--blog {
+      margin-bottom: 60px;
+    }
+    @media (max-width: 767px) {
+      padding: 15px !important;
+      margin-bottom: 20px;
+    }
+    &:hover {
+      .article-card__image,
+      .article-card__image--home {
+        transform: scale(1.1);
+        z-index: 0;
+      }
+    }
+  }
+  &__media {
+    position: relative;
+    overflow: hidden;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    // margin-bottom: 30px;
+    border-radius: 8px;
+    transition: transform 0.5s;
+    &--home {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      // margin-bottom: 30px;
+      border-radius: 8px;
+      border-radius: 0;
+      transition: transform 0.5s;
+    }
+  }
+  &__date {
+    position: absolute;
+    bottom: 2.75rem;
+    left: 0;
+    background-color: $color-primary;
+    font-family: $font-secondary;
+    font-size: $font-l20;
+    line-height: $line-p20;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0;
+    color: $color-white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 30px 30px 0;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+  &__categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+  }
+  &__category {
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: $color-white;
+    font-weight: $font-weight-medium;
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-h2;
+    font-weight: $font-weight-regular;
+    line-height: $line-h2;
+    letter-spacing: $letter-spacing-default;
+    margin: 30px 0 12px 0;
+    text-transform: uppercase;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+      font-size: 16px;
+      line-height: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__title-link {
+    color: $color-black;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &__description {
+    font-family: $font-secondary;
+    font-size: $font-p20;
+    font-weight: $font-weight-medium;
+    line-height: $line-p20;
+    letter-spacing: $letter-spacing-default;
+    margin-bottom: 50px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    vertical-align: middle;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+}

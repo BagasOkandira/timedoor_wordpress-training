@@ -1,0 +1,58 @@
+@use "../_config.scss" as *;
+
+.hero {
+  height: 50vh;
+  // background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &__wrapper {
+    text-align: center;
+    margin-top: 5vw;
+    @media (max-width: 767px) {
+      margin-top: 20vw;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("../images/tiles.png");
+      background-repeat: repeat;
+      opacity: 0.4;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-h1;
+    font-weight: $font-weight-regular;
+    line-height: $line-h1;
+    letter-spacing: $letter-spacing-default;
+    text-transform: uppercase;
+    color: $color-white;
+    z-index: 3;
+  }
+  &__bcrumb {
+    font-family: $font-secondary;
+    font-size: $font-l26 !important;
+    font-weight: $font-weight-bold;
+    line-height: $line-l26;
+    letter-spacing: $letter-spacing-default;
+    justify-content: center;
+    z-index: 3;
+  }
+  &__bcrumb-item {
+    color: $color-white !important;
+    &::before {
+      color: $color-white !important;
+    }
+  }
+  &__bcrumb-link {
+    text-decoration: none;
+    color: $color-primary-60 !important;
+  }
+}

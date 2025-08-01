@@ -1,0 +1,153 @@
+@use "../_config.scss" as *;
+
+.portfolio {
+  background-color: $color-gray-100;
+  padding: 7% 0 11% 0;
+
+  &__card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    height: 100%;
+
+    &:hover {
+      .portfolio__overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    color: $color-white;
+    text-align: center;
+    opacity: 0;
+    transition: 0.7s ease;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 34px;
+      left: 34px;
+      right: 34px;
+      bottom: 34px;
+      border: solid 1px $color-white;
+      overflow: hidden;
+    }
+    @media (max-width: 990px) {
+      opacity: 1;
+    }
+  }
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-h3;
+    line-height: $line-h3;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media (max-width: 990px) {
+      font-size: 32px;
+    }
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    min-width: 2vw;
+    height: auto;
+    aspect-ratio: cos(30deg);
+    clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+    transition: transform 0.5s ease;
+    z-index: 200;
+    background-color: $color-primary;
+    svg {
+      width: 2vw;
+      height: auto;
+      path {
+        transition: 0.5s;
+      }
+    }
+    &:hover {
+      svg path {
+        stroke: $color-gray-400;
+      }
+    }
+    @media (max-width: 990px) {
+      width: 8vw;
+      height: auto;
+      svg {
+        width: 4vw;
+        height: auto;
+      }
+    }
+  }
+  &__pagination {
+    justify-content: center;
+    margin-top: 130px;
+    gap: 10px;
+    &--left {
+      justify-content: left;
+    }
+  }
+  .page-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: $color-white;
+    border: solid 1px $color-gray-200;
+    transition: 0.5s;
+    text-decoration: none;
+    color: $color-black;
+    &:hover {
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
+      color: $color-white;
+    }
+    &.current {
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
+      color: $color-white;
+    }
+  }
+  &__page-link {
+    display: block;
+    font-family: $font-secondary;
+    font-size: $font-l24;
+    font-weight: $font-weight-regular;
+    line-height: $line-l24;
+    letter-spacing: 0;
+    text-decoration: none;
+    color: $color-primary;
+    padding: 1rem 1.5rem;
+    transition: 0.5s;
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+    @media (max-width: 767px) {
+      font-size: 16px;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+}
